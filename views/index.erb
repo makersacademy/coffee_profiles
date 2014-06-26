@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Github profiles</title>
+    <link href='/style/github.css' rel='stylesheet'>
+  </head>
+  <body>
+    <form id='add_profile'>
+      <input id='username' placeholder='Enter a Github username'>
+      <button type='submit'>Load profile</button>
+    </form>
+
+    <img src='http://www.iab.net/extra/adquickref/spinnerLarge.gif' class='spinner'>
+
+    <div class='profile-container'>
+    </div>
+
+    <template id='profile-template'>
+      <div class="profile">
+        <div class="left">
+          <img src="{{ avatar_url }}">
+        </div>
+
+        <div class="right">
+          <h3>
+            <a href="{{ html_url }}">
+              {{ login }}
+            </a>
+          </h3>
+          <h4>Repos: {{ public_repos }}</h4>
+          <h4>Followers: {{ followers }}</h4>
+        </div>
+        <br clear="all">
+      </div>
+    </template>
+
+    <script src='https://code.jquery.com/jquery-2.0.3.min.js'></script>
+    <script src='/js/mustache.js'></script>
+    <script src='/javascript/gitprofiles.js'></script>
+  </body>
+</html>
